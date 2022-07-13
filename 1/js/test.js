@@ -4,7 +4,7 @@ function useStrict() {
 }
 
 let numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "0");
-console.log(numberOfFilms);
+
 const personalMovieDB = {
     count:numberOfFilms,
     movies : {},
@@ -23,7 +23,7 @@ personalMovieDB.movies = {
     movieName2: rate2
 };
 
-console.log(personalMovieDB.movies);
+console.log(personalMovieDB);
 
 
 
