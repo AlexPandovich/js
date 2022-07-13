@@ -6,7 +6,7 @@ function useStrict() {
 let numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "0");
 console.log(numberOfFilms);
 const personalMovieDB = {
-    numberOfFilms:numberOfFilms,
+    count:numberOfFilms,
     movies : {},
     actors : {},
     genres : [],
