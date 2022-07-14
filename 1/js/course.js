@@ -1,30 +1,33 @@
 "use strict";
 
+let num = 20;
 
-
-const lines = 5;
-let result = '';
-let starsCount = 1;
-
-for (let i = 0; i <= lines; ++i) {
-    for(let j = i; j < lines; j++) {
-        result += " ";
-    }
-    for(let k = 0; k < starsCount; k++) {
-        result += "*";
-    }
-    result += "\n"
-    starsCount +=2;
+function showFirstMessage(text) {
+    console.log(`hello ${text}`);
+    let num = 10;
 }
 
-// for (let i = 0; i <= lines; i++) {
-//     for (let j = 0; j < lines - i; j++) {
-//         result += " ";
-//     }
-//     for (let j = 0; j < 2 * i + 1; j++) {
-//         result += "*";
-//     }
-//     result += "\n";
-// }
+showFirstMessage("world");
+console.log(num);
 
-console.log(result);
+
+
+function ret() {
+    let num = 50;
+    return num;
+}
+
+
+let anotherNum = ret();
+console.log(anotherNum); 
+console.log(num);
+
+const logger = function () {
+    console.log("hello expression");
+};
+
+logger();
+
+const calc = (a,b) => a+b;
+
+console.log(calc(3, 4));
