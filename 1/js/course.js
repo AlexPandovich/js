@@ -1,33 +1,30 @@
 "use strict";
 
-let num = 20;
-
-function showFirstMessage(text) {
-    console.log(`hello ${text}`);
-    let num = 10;
+function first() {
+    //do something
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
 }
 
-showFirstMessage("world");
-console.log(num);
-
-
-
-function ret() {
-    let num = 50;
-    return num;
+function second() {
+    console.log(2);
 }
 
+first();
+second();
 
-let anotherNum = ret();
-console.log(anotherNum); 
-console.log(num);
+function learnJs(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
+}
 
-const logger = function () {
-    console.log("hello expression");
-};
+learnJs("javascript", second);
+learnJs("javascript", function() {
+    console.log("Я учу єтот урок");
+});
 
-logger();
 
-const calc = (a,b) => a+b;
 
-console.log(calc(3, 4));
+
+
