@@ -1,38 +1,36 @@
-"use strict";
-const obj = {};
+"use strict";const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000,
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log("Test");
+    calculateTotalSquare:function() {
+        let totalSquare = 0;
+        this.shops.forEach((val, i)=> {
+            totalSquare += val.length * val.width;
+        });
+
+        return totalSquare;
     }
 };
 
-//console.log(options.name);
-//delete options.height;
-//console.log(options);
-
-for(let i in options) {
-    if(typeof(options[i]) == 'object') {
-        for(let j in options[i]) {
-            console.log(`Свойтство ${j} имеет значение ${options[i][j]}`);
-        }
-    } else {
-        console.log(`Свойтство ${i} имеет значение ${options[i]}`);
-    }
+function isBudgetEnough(data) {
     
 }
-
-//console.log(Object.keys(options).length);
-options.makeTest();
-
-const {border, bg} = options.colors;
-
-console.log(border);
-
