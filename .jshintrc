@@ -2,6 +2,7 @@
 	"camelcase" : true,
 	"indent": 2,
 	"undef": true,
+	"debug": true,
 	"quotmark": false,
 	"maxlen": 120,
 	"trailing": true,
