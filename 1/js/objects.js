@@ -1,48 +1,30 @@
 "use strict";
 
-const shoppingMallData = {
-    shops: [
-        {
-            width: 10,
-            length: 5
-        },
-        {
-            width: 15,
-            length: 7
-        },
-        {
-            width: 20,
-            length: 5
-        },
-        {
-            width: 8,
-            length: 10
-        }
-    ],
-    height: 5,
-    moneyPer1m3: 30,
-    budget: 50000,
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
 
-    calculateTotalSquare:function() {
-        let totalSquare = 0;
-        this.shops.forEach((val, i)=> {
-            totalSquare += val.length * val.width * this.height;
-        });
-
-        return totalSquare;
-    },
+function sortStudentsByGroups(arr) {
+    let result = [];
+    const groupCount = students.length / 3;
+    const kidsCountInGroup = 3;
     
-};
+    for(let groupId = 0; groupId < groupCount; groupId++) {
+        let newgroup = [];
+        
+        if(3 <= groupId) {
+            result[groupId] = newgroup;
+        }
 
-function isBudgetEnough(data) {
-    let volume = data.calculateVolume(data.calculateTotalSquare());
-    let totalCost = volume * data.moneyPer1m3;
-    if(data.budget / totalCost >= 0) {
-        console.log("Бюджета достаточно");
-    } else {
-        console.log("Бюджета недостаточно");
+        for(let i = 0; i < kidsCountInGroup; ++i) {
+            newgroup[i] = arr[groupId + i];
+        }
     }
+
+    if (groupCount <= 3) {
+        
+    }
+    
+    return result;
+    //console.log(result);
 }
 
-
-isBudgetEnough(shoppingMallData);
+console.log(sortStudentsByGroups(students));
