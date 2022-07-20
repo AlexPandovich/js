@@ -25,25 +25,39 @@ const movieDB = {
 };
 
 const adv = document.querySelectorAll(".promo__adv img");
+const comedy = document.querySelector(".promo__genre");
+const promoContent = document.querySelector(".promo__bg");
+const movieList = document.querySelector(".promo__interactive-list");
+
 adv.forEach(item => {
     item.remove();
 });
 
-const comedy = document.querySelector(".promo__genre");
+
 comedy.textContent = "Драма";
-
-const promoContent = document.querySelector(".promo__bg");
 promoContent.style.backgroundImage = "url('img/bg.jpg')";
-
-const movieList = document.querySelector(".promo__interactive-list");
 movieList.innerHTML = "";
 
+// movieDB.movies.forEach((item, i) => {
+//     movieList.innerHTML += 
+//     `<li class="promo__interactive-item">${i}. ${item}
+//         <div class="delete"></div>
+//     </li>`;
+// });
+
+
 movieDB.movies.forEach((item, i) => {
-    movieList.innerHTML += 
-    `<li class="promo__interactive-item">${i}. ${item}
-        <div class="delete"></div>
-    </li>`;
+    const li = document.createElement("li");
+    li.classList = "promo__interactive-item";
+    li.textContent = `${i} ${item}`;
+    
+    const div = document.createElement('div');
+    div.classList = "delete";
+    li.append(div);
+
+    movieList.append(li);
 });
+
 
 
 
