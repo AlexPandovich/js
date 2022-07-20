@@ -36,7 +36,13 @@ adv.forEach(item => {
 
 comedy.textContent = "Драма";
 promoContent.style.backgroundImage = "url('img/bg.jpg')";
-movieList.innerHTML = "";
+//movieList.innerHTML = "";
+console.log(movieList.childNodes);
+
+movieList.childNodes.forEach(val => {
+    movieList.removeChild(val);
+    //console.log(val);
+});
 
 // movieDB.movies.forEach((item, i) => {
 //     movieList.innerHTML += 
@@ -46,17 +52,17 @@ movieList.innerHTML = "";
 // });
 
 
-movieDB.movies.forEach((item, i) => {
-    const li = document.createElement("li");
-    li.classList = "promo__interactive-item";
-    li.textContent = `${i} ${item}`;
+// movieDB.movies.forEach((item, i) => {
+//     const li = document.createElement("li");
+//     li.classList = "promo__interactive-item";
+//     li.textContent = `${i} ${item}`;
     
-    const div = document.createElement('div');
-    div.classList = "delete";
-    li.append(div);
+//     const div = document.createElement('div');
+//     div.classList = "delete";
+//     li.append(div);
 
-    movieList.append(li);
-});
+//     movieList.append(li);
+// });
 
 
 
